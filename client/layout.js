@@ -1,5 +1,8 @@
 Template.layout.currentweather = function() {
 
+	// Set a default.
+	var city = Session.setDefault('city', 'Boston,MA');
+
 	var city = Session.get('city');
 
 	Meteor.call('getWeather', city, function (error, results) {
