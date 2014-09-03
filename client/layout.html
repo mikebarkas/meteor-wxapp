@@ -3,16 +3,30 @@
 <h1>Weather Application</h1>
 
 <select class="cities">
-  <option value='Boston,MA'>Boston, MA</option>
   <option value='Charlotte,NC'>Charlotte, NC</option>
+  <option value='Boston,MA'>Boston, MA</option>
   <option value='Tampa,FL'>Tampa, FL</option>
+  <option value='New York,NY'>New York, NY</option>
+  <option value='Seattle,WA'>Seattle, WA</option>
 </select>
 
 <div>
-<h1>{{currentweather}}</h1>
+
+<div>
+
+<p>{{description}}</p>
+<p>
+
+<img src="http://openweathermap.org/img/w/{{icon}}.png"/>
+</p>
+
+<p>Temp: {{temp}} C</p>
+
+<p>Humidity: {{humidity}} %</p>
+
 </div>
 
-
+</div>
 </div>
 
 </template>

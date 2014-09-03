@@ -1,26 +1,73 @@
-Template.layout.currentweather = function() {
+Template.layout.helpers( {
 
-	// Set a default.
-	var city = Session.setDefault('city', 'Boston,MA');
+	
+	description : function () {
+		// Set a default.
+		var city = Session.setDefault('city', 'Charlotte,NC');
+		var city = Session.get('city');
 
-	var city = Session.get('city');
+		Meteor.call('getWeather', city, function (error, results) {
+			console.log(results.statusCode, results.content);
 
-	Meteor.call('getWeather', city, function (error, results) {
-		console.log(results.content);
-		Session.set('weather', JSON.parse(results.content).weather[0].description);
-		Session.set('weather2', JSON.parse(results.content).weather[0].main);
-		Session.set('weather3', JSON.parse(results.content).wind.speed);
+			Session.set('weather', JSON.parse(results.content).weather[0].description);
+
+		});
+
+	return (Session.get('weather'));
+
+	},
+
+
+	icon : function () {
+		var city = Session.get('city');
+
+		Meteor.call('getWeather', city, function (error, results) {
+			console.log(results.statusCode, results.content);
+
+			Session.set('icon', JSON.parse(results.content).weather[0].icon);
 		
-	})
+		});
 
-	return (Session.get('weather') + ' in ' + city);
-	//return (Session.get('weather3') + ' wind ' + city);
-};
+		return Session.get('icon');
+	},
+
+
+	temp : function () {
+		var city = Session.get('city');
+
+		Meteor.call('getWeather', city, function (error, results) {
+			console.log(results.statusCode, results.content);
+
+			Session.set('temp', JSON.parse(results.content).main.temp);
+
+		});
+		// Subtract from Kelvin.
+		return (Session.get('temp') - 273.15);
+	},
+
+
+	humidity : function () {
+		var city = Session.get('city');
+
+		Meteor.call('getWeather', city, function (error, results) {
+			console.log(results.statusCode, results.content);
+
+			Session.set('humidity', JSON.parse(results.content).main.humidity);
+
+		});
+		
+		return Session.get('humidity');
+	}
+
+});
+
 
 Template.layout.events({
 	
 	'change .cities': function (evt, tmpl) {
+
 		Session.set('city', tmpl.find('.cities').value);
+		
 	}
 
 });
