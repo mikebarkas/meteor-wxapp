@@ -22,8 +22,7 @@ Template.layout.helpers( {
 		var city = Session.get('city');
 
 		Meteor.call('getWeather', city, function (error, results) {
-			console.log(results.statusCode, results.content);
-
+			
 			Session.set('icon', JSON.parse(results.content).weather[0].icon);
 		
 		});
@@ -36,7 +35,6 @@ Template.layout.helpers( {
 		var city = Session.get('city');
 
 		Meteor.call('getWeather', city, function (error, results) {
-			console.log(results.statusCode, results.content);
 
 			Session.set('temp', JSON.parse(results.content).main.temp);
 
@@ -50,7 +48,6 @@ Template.layout.helpers( {
 		var city = Session.get('city');
 
 		Meteor.call('getWeather', city, function (error, results) {
-			console.log(results.statusCode, results.content);
 
 			Session.set('humidity', JSON.parse(results.content).main.humidity);
 
