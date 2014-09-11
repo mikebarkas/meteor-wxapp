@@ -17,19 +17,16 @@
 <div>
 
 <div>
-<p>{{description}}</p>
-<p>{{description.main.temp}}</p>
-<p>Pressure: {{description.main.pressure}}</p>
-<p>Humidity: {{description.main.humidity}}</p>
-
+<p>City: {{wx.name}}</p>
+<p>Sky Conditon: {{wx.weather.[0].description}}</p>
+<p>Temp: {{wx.main.temp}} Kelvin</p>
+<p>Pressure: {{wx.main.pressure}} hP</p>
+<p>Humidity: {{wx.main.humidity}} %</p>
+<p>Wind Speed: {{wx.wind.speed}}</p>
+<p>Wind Direction: {{wx.wind.deg}}</p>
 
 
 <hr/>
-<p><img src="http://openweathermap.org/img/w/{{icon}}.png"/></p>
-
-<p>Temp: {{temp}} C</p>
-
-<p>Humidity: {{humidity}} %</p>
 
 </div>
 
