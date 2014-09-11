@@ -17,12 +17,15 @@
 <div>
 
 <div>
-
 <p>{{description}}</p>
-<p>
+<p>{{description.main.temp}}</p>
+<p>Pressure: {{description.main.pressure}}</p>
+<p>Humidity: {{description.main.humidity}}</p>
 
-<img src="http://openweathermap.org/img/w/{{icon}}.png"/>
-</p>
+
+
+<hr/>
+<p><img src="http://openweathermap.org/img/w/{{icon}}.png"/></p>
 
 <p>Temp: {{temp}} C</p>
 

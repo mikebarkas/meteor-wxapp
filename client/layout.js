@@ -9,10 +9,10 @@ Template.layout.helpers( {
 		Meteor.call('getWeather', city, function (error, results) {
 			console.log(results.statusCode, results.content);
 
-			Session.set('weather', JSON.parse(results.content).weather[0].description);
-
+			Session.set('weather', JSON.parse(results.content));
+			// wx = JSON.parse(results.content);
 		});
-
+		//return wx;
 	return (Session.get('weather'));
 
 	},
