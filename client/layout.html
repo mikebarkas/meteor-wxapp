@@ -1,8 +1,15 @@
 <template name="layout">
 
 <div class="navbar navbar-default navbar-fixed-top">
-<h3 call="navbar-brand">Weather Application</h3>
+<p class	="navbar-brand">Weather Application</p>
 
+
+
+</div>
+
+
+
+<div class="container-fluid">
 
 <div class="form-group">
 <select class="cities">
@@ -17,13 +24,8 @@
   <option value='Wichita, KS'>Wichita, KS</option>
 </select>
 </div>
-</div>
 
-
-
-<div class="container-fluid">
-
-<div>
+<div class="data">
 <p>City: {{wx.name}}</p>
 <p>Sky Conditon: {{wx.weather.[0].description}}</p>
 <p>Temp: {{wx.main.temp}} Kelvin</p>
