@@ -1,7 +1,10 @@
 <template name="layout">
-<div class="container">
-<h1>Weather Application</h1>
 
+<div class="navbar navbar-default navbar-fixed-top">
+<h3 call="navbar-brand">Weather Application</h3>
+
+
+<div class="form-group">
 <select class="cities">
   <option value='Charlotte,NC'>Charlotte, NC</option>
   <option value='Boston,MA'>Boston, MA</option>
@@ -13,8 +16,12 @@
   <option value='Duluth, MN'>Duluth, MN</option>
   <option value='Wichita, KS'>Wichita, KS</option>
 </select>
+</div>
+</div>
 
-<div>
+
+
+<div class="container-fluid">
 
 <div>
 <p>City: {{wx.name}}</p>
@@ -25,12 +32,10 @@
 <p>Wind Speed: {{wx.wind.speed}}</p>
 <p>Wind Direction: {{wx.wind.deg}}</p>
 
-
 <hr/>
 
 </div>
 
-</div>
 </div>
 
 </template>
