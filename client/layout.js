@@ -10,26 +10,15 @@ Template.layout.helpers( {
 			console.log(results.statusCode, results.content);
 
 			Session.set('wx', JSON.parse(results.content));
-			
-		});
-		
-	return (Session.get('wx'));
 
-	},
-/*
-	temp : function () {
-		var city = Session.get('city');
-		Meteor.call('getWeather', city, function (error, results) {
-			Session.set('temp', JSON.parse(results.content).main.temp);
 		});
-		// Subtract from Kelvin.
-		return (Session.get('temp') - 273.15);
-	},
-*/
 
+		return (Session.get('wx'));
+	},
 
 });
 
+// Subtract from Kelvin.  kelvin - 273.15 = f.
 
 Template.layout.events({
 	'change .cities': function (evt, tmpl) {

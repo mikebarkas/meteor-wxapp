@@ -1,42 +1,34 @@
 <template name="layout">
-
-<div class="navbar navbar-default navbar-fixed-top">
-<p class	="navbar-brand">Weather Application</p>
-
-
-
+  <div class="navbar navbar-default navbar-fixed-top">
+  <p class	="navbar-brand">Weather Application</p>
 </div>
-
-
 
 <div class="container-fluid">
 
-<div class="form-group">
-<select class="cities">
-  <option value='Charlotte,NC'>Charlotte, NC</option>
-  <option value='Boston,MA'>Boston, MA</option>
-  <option value='Tampa,FL'>Tampa, FL</option>
-  <option value='New York,NY'>New York, NY</option>
-  <option value='Seattle,WA'>Seattle, WA</option>
-  <option value='Huston,TX'>Huston, TX</option>
-  <option value='San Francisco, CA'>San Francisco, CA</option>
-  <option value='Duluth, MN'>Duluth, MN</option>
-  <option value='Wichita, KS'>Wichita, KS</option>
-</select>
-</div>
+  <div class="form-group">
+  <select class="cities">
+    <option value='Charlotte,NC'>Charlotte, NC</option>
+    <option value='Boston,MA'>Boston, MA</option>
+    <option value='Tampa,FL'>Tampa, FL</option>
+    <option value='New York,NY'>New York, NY</option>
+    <option value='Seattle,WA'>Seattle, WA</option>
+    <option value='Huston,TX'>Huston, TX</option>
+    <option value='San Francisco, CA'>San Francisco, CA</option>
+    <option value='Duluth, MN'>Duluth, MN</option>
+    <option value='Wichita, KS'>Wichita, KS</option>
+  </select>
+  </div>
 
-<div class="data">
-<p>City: {{wx.name}}</p>
-<p>Sky Conditon: {{wx.weather.[0].description}}</p>
-<p>Temp: {{wx.main.temp}} Kelvin</p>
-<p>Pressure: {{wx.main.pressure}} hP</p>
-<p>Humidity: {{wx.main.humidity}} %</p>
-<p>Wind Speed: {{wx.wind.speed}}</p>
-<p>Wind Direction: {{wx.wind.deg}}</p>
-
-<hr/>
-
-</div>
+  <div class="data">
+    <p>City: {{wx.name}}</p>
+    <p>Sky Conditon: {{wx.weather.[0].description}}</p>
+    <p>Temp: {{wx.main.temp}} Kelvin</p>
+    <p>Pressure: {{wx.main.pressure}} hP</p>
+    <p>Humidity: {{wx.main.humidity}} %</p>
+    <p>Wind Speed: {{wx.wind.speed}}</p>
+    <p>Wind Direction: {{wx.wind.deg}}</p>
+    <hr/>
+  </div>
 
 </div>
 
