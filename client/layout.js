@@ -1,4 +1,4 @@
-Template.layout.helpers( {
+Template.basic.helpers( {
 
 	wx : function () {
 		// Set a default.
@@ -20,7 +20,7 @@ Template.layout.helpers( {
 
 // Subtract from Kelvin.  kelvin - 273.15 = f.
 
-Template.layout.events({
+Template.basic.events({
 	'change .cities': function (evt, tmpl) {
 		Session.set('city', tmpl.find('.cities').value);
 	}
