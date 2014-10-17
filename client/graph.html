@@ -1,6 +1,9 @@
 <template name="graph">
+  <div class="navbar navbar-default navbar-fixed-top">
+    <p class="navbar-brand">Weather Application</p>
+  </div>
 
-<div id="container-fluid">
+<div class="container-fluid">
   {{> cities}}
 
   <div class="graphs">
@@ -10,6 +13,10 @@
     sky
     temp,press,humid
     wind dir, speed
+  </div>
+
+  <div id="chart">
+
   </div>
 
 </div>
